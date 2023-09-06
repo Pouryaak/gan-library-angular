@@ -1,0 +1,27 @@
+@import "../../../theme/variables.scss";
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  & img {
+    margin-right: 10px;
+  }
+  & span {
+    margin-top: 10px;
+    color: white;
+  }
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.menu a {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.active {
+  color: $secondaryColor;
+}

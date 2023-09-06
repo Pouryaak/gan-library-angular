@@ -1,0 +1,6 @@
+<div>
+  <app-book-list *ngIf="!isLoading" [books]="books"></app-book-list>
+  <div class="container" *ngIf="isLoading">
+    <app-loader [show]="isLoading"></app-loader>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="search-box">
+  <h1>Book Search</h1>
+  <h4>Reading lists begin as a shelf full of hope until the year flies</h4>
+  <form
+    #form="ngForm"
+    style="width: 100%"
+    [formGroup]="searchForm"
+    (ngSubmit)="onSearch()"
+  >
+    <mat-form-field appearance="outline" style="width: 100%">
+      <input
+        matInput
+        type="text"
+        name="searchTerm"
+        placeholder="ex. Harry Potter"
+        formControlName="searchTerm"
+      />
+      <button type="submit" mat-icon-button matSuffix>
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+  <div>
+    <app-book-list
+      *ngIf="!isLoading && showResults"
+      [books]="books"
+      [title]="'Search Results'"
+    ></app-book-list>
+  </div>
+  <div class="container" *ngIf="isLoading">
+    <app-loader [show]="isLoading"></app-loader>
+  </div>
+</div>

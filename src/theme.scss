@@ -1,0 +1,31 @@
+@use "@angular/material" as mat;
+
+// Include the core styles
+@include mat.core();
+
+// Use Angular Material's palettes for your colors
+$my-primary: mat.define-palette(
+  mat.$blue-grey-palette
+); // Assuming blue-grey is closest to #102e38
+$my-accent: mat.define-palette(
+  mat.$red-palette
+); // Assuming red is closest to #fb5a48
+
+// The "warn" palette will remain as red for errors and warnings
+$my-warn: mat.define-palette(mat.$red-palette);
+
+// Define the theme
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// Apply the theme to Angular Material components
+@include mat.all-component-themes($my-theme);

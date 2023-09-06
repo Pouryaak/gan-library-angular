@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="list" *ngIf="books.length > 0; else noBooks">
+    <app-book-card *ngFor="let book of books" [book]="book"></app-book-card>
+  </div>
+  <ng-template #noBooks>
+    <div class="alert alert-info">No books found!</div>
+  </ng-template>
+</div>

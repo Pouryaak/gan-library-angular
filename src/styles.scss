@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@use "./theme.scss";
+@import "./app/theme/variables.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease-out;
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 100px;
+}

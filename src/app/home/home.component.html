@@ -1,0 +1,11 @@
+<div>
+  <app-search></app-search>
+  <ng-container *ngIf="books$ | async as books; else loading">
+    <app-book-list [books]="books" [title]="'Latest Books'"></app-book-list>
+  </ng-container>
+  <ng-template #loading>
+    <div class="container">
+      <app-loader [show]="true"></app-loader>
+    </div>
+  </ng-template>
+</div>
